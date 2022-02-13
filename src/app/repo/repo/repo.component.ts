@@ -1,4 +1,7 @@
+import { GitSearchService } from './../../gitSearch-service/git-search.service';
+import { User } from './../../user-class/user';
 import { Component, OnInit } from '@angular/core';
+import { Repository } from 'src/app/repository-class/repository';
 
 @Component({
   selector: 'app-repo',
@@ -6,10 +9,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./repo.component.css']
 })
 export class RepoComponent implements OnInit {
+  user!:User
+  repository!:Repository
 
-  constructor() { }
+  constructor(private service:GitSearchService) { 
+    this.repository = new Repository()
+  }
+  findingUser(user:any){
+    this.service.findingUser(user).then((success)=>{
+      this.user = this.service.user
+    })
+  }
 
   ngOnInit(): void {
+    this.findingUser('Samuel-Muriuki')
+
   }
 
 }
