@@ -14,7 +14,7 @@ export class GitSearchService {
   repository!:Repository
 
   constructor(private http:HttpClient) {
-    this.user = new User('', 0)
+    this.user = new User('', 0, '')
     this.repository =new Repository('')
   }
 
@@ -22,7 +22,8 @@ export class GitSearchService {
   findingUser(githubSearch: any) {
     interface GithubUser {
       html_url: string,
-      public_repos: number
+      public_repos: number,
+      avatar_url: string
     }
 
     let headers = new HttpHeaders({'Authorization': 'token' + environment.apiKey})
