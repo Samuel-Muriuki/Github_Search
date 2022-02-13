@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SearchFormComponent } from './search-form/search-form/search-form.component';
 import { RepoComponent } from './repo/repo/repo.component';
+import { TimePipe } from './time-pipe/time.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchFormComponent,
-    RepoComponent
+    RepoComponent,
+    TimePipe
   ],
   imports: [
     BrowserModule,
