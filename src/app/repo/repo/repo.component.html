@@ -2,7 +2,8 @@
 <div *ngIf="user;repository">
     <h1>{{user.html_url}}</h1>
     <p>{{  user.public_repos }}</p>
-    <br>
+    <a href="{{ user.html_url }}" class="btn btn-info">View Repository</a>
+    <hr>
     <ol>
         <li *ngFor="let repo of repository">
             <h2>{{repo.html_url}}</h2>
