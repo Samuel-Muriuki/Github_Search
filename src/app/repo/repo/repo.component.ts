@@ -10,16 +10,20 @@ import { Repository } from 'src/app/repository-class/repository';
 })
 export class RepoComponent implements OnInit {
   user!:User
-  repository!:Repository
+  repository!:Repository | any
 
   constructor(private service:GitSearchService) { 
-    this.repository = new Repository()
+    this.repository = new Repository('')
   }
   findingUser(user:any){
     this.service.findingUser(user).then((success)=>{
       this.user = this.service.user
     })
+    this.service.findRepos(user).then((success)=>{
+      this.repository = this.service.repository
+    })
   }
+  
 
   ngOnInit(): void {
     this.findingUser('Samuel-Muriuki')

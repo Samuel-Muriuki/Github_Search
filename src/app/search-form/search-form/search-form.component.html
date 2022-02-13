@@ -2,7 +2,8 @@
     <form>
         <div class="form-group">
             <label for="githubSearch">Github Search</label>
-            <input type="text" name="githubSearch" placeholder="Search" >
+            <input type="text" name="githubSearch" [(ngModel)]="user" placeholder="Search" >
+            <button (click)="search();">search</button>
         </div>
     </form>
 </div>

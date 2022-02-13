@@ -1,5 +1,11 @@
-<div *ngIf="user">
-
-
+<app-search-form (value) = "findingUser($event)"></app-search-form>
+<div *ngIf="user;repository">
     <h1>{{user.html_url}}</h1>
+    <p>{{  user.public_repos }}</p>
+    <br>
+    <ol>
+        <li *ngFor="let repo of repository">
+            <h2>{{repo.html_url}}</h2>
+        </li>
+    </ol>
 </div>
