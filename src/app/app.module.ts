@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { SearchFormComponent } from './search-form/search-form/search-form.component';
 import { RepoComponent } from './repo/repo/repo.component';
 import { TimePipe } from './time-pipe/time.pipe';
+import { CcCardHoverDirective } from './ccCardHover-directive/cc-card-hover.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchFormComponent,
     RepoComponent,
-    TimePipe
+    TimePipe,
+    CcCardHoverDirective
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,16 @@
 img {
     border-radius: 50%;
 }
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.btn-info {
+    color: rgb(0, 89, 253);
+}
+
+.container-fluid {
+    background-color: rgb(43, 122, 226);
+}
