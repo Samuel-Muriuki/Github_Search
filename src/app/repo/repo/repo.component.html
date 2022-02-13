@@ -49,15 +49,15 @@
         </div>
       </div>
       <div class="card-body">
-        <div class="col-md-4">
-            <div class="card">
-                <ol>
-                    <li *ngFor="let repo of repository" class="list-group-item">
+        <div class="col col-lg-8 mx-auto">
+            <div class="shadow-lg p-3 mb-5 bg-white rounded">
+                
+                    <div *ngFor="let repo of repository" class="list-group-item">
                       <h2>{{repo.name}}</h2>
                       <h4>{{ repo.description }}</h4>
                       <button class="btn btn-success"><a href="{{ repo.html_url }}" target="_blank">View in GitHub</a></button>
-                    </li>
-                  </ol>
+                    
+                    </div>
             </div>
         </div>
       </div>
