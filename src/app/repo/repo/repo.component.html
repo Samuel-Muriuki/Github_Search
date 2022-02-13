@@ -1,64 +1,66 @@
 <div class="container-fluid">
-  <div *ngIf="user;repository">
-
+  <div *ngIf="user; repository">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
-            <h1>
-                <a class="nav-item nav-link">Welcome to the Github Search Application<span class="sr-only"></span></a>
-            </h1>
-          </div>
-        </div>
-      </nav>
-      
-
-    <div class="card profile">
-      <div class="panel-body">
-        <div class="row">
-          <div class="col">
-            <div class="row mt-2">
-              <div class="row">
-                <div class="col-sm">
-                  <div class="avatar">
-                    <img src="{{ user.avatar_url }}" alt="" height="200px">
-                  </div>
-                  <div class="card-body">
-                    <h2>{{ user.login }}</h2>
-                    <a href="{{ user.html_url }}" class="btn btn-info">View Repository</a>
-                    <hr>
-                  </div>
-
-                </div>
-                <div class="col-sm">
-                  <h4>
-                    <app-search-form (value)="findingUser($event)"></app-search-form>
-                  </h4>
-                </div>
-                <div class="col-sm">
-                  <h3>Number of Repositories: {{  user.public_repos }}</h3>
-                </div>
-
-
-              </div>
-            </div>
-          </div>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <h1>
+            <a class="nav-item nav-link"
+              >Welcome to the Github Search Application<span
+                class="sr-only"
+              ></span
+            ></a>
+          </h1>
         </div>
       </div>
+    </nav>
 
-
+    <div class="card profile">
+      <div class="card-header row">
+        <div class="col-sm">
+          <div class="avatar">
+            <img src="{{ user.avatar_url }}" alt="" height="200px" />
+          </div>
+          <div class="card-body">
+            <h2>{{ user.login }}</h2>
+            <a href="{{ user.html_url }}" class="btn btn-info"
+              >View Repository</a
+            >
+            <hr />
+          </div>
+        </div>
+        <div class="col-sm">
+          <h4>
+            <app-search-form (value)="findingUser($event)"></app-search-form>
+          </h4>
+        </div>
+        <div class="col-sm">
+          <h3>Number of Repositories: {{ user.public_repos }}</h3>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="col-md-4">
+            <div class="card">
+                <ol>
+                    <li *ngFor="let repo of repository" class="list-group-item">
+                      <h2>{{repo.name}}</h2>
+                      <h4>{{ repo.description }}</h4>
+                      <button class="btn btn-success"><a href="{{ repo.html_url }}" target="_blank">View in GitHub</a></button>
+                    </li>
+                  </ol>
+            </div>
+        </div>
+      </div>
     </div>
-
   </div>
-
-
-
-  <ol>
-    <li *ngFor="let repo of repository" class="list-group-item">
-      <h2>{{repo.html_url}}</h2>
-    </li>
-  </ol>
 </div>
