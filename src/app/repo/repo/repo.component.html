@@ -52,12 +52,18 @@
         <div class="col col-lg-8 mx-auto">
             <div class="shadow-lg p-3 mb-5 bg-white rounded">
                 
-                    <div *ngFor="let repo of repository" class="list-group-item">
+                    <div *ngFor="let repo of repository" class="list-group-item p-4 m-3 shadow-lg p-3 mb-5 bg-white rounded border-success rounded">
                       <h2>{{repo.name}}</h2>
                       <h4>{{ repo.description }}</h4>
-                      <button class="btn btn-success"><a href="{{ repo.html_url }}" target="_blank">View in GitHub</a></button>
+                      <button class="btn btn-success m-4"><a href="{{ repo.html_url }}" target="_blank">View in GitHub</a></button>
                     
+                      <div class="card-footer col text-muted">
+                        <div class="float-left">
+                            <p>Created:{{ repo.created_at | time }}</p>
+                        </div>
                     </div>
+                    </div>
+                    
             </div>
         </div>
       </div>
