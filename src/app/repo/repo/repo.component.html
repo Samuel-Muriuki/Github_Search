@@ -1,9 +1,10 @@
 <div class="container-fluid">
     <app-search-form (value) = "findingUser($event)"></app-search-form>
 <div *ngIf="user;repository">
-    <img src="{{ user.avatar_url }}" alt="" height="200px">
-    <a href="{{ user.html_url }}" class="btn btn-info">View Repository</a>
-    <p>Number of Repositories: {{  user.public_repos }}</p>
+
+    <div class="card">
+        .card-body
+    </div>
     <hr>
     <ol>
         <li *ngFor="let repo of repository">
