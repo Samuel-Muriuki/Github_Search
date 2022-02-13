@@ -3,7 +3,12 @@
 <div *ngIf="user;repository">
 
     <div class="card">
-        .card-body
+        <div class="card-body">
+            <img src="{{ user.avatar_url }}" alt="" height="200px">
+            <h2>{{ user.login }}</h2>
+            <a href="{{ user.html_url }}" class="btn btn-info">View Repository</a>
+            <p>Number of Repositories: {{  user.public_repos }}</p>
+        </div>
     </div>
     <hr>
     <ol>
