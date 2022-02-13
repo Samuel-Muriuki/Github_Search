@@ -1,13 +1,14 @@
-<app-search-form (value) = "findingUser($event)"></app-search-form>
+<div class="container-fluid">
+    <app-search-form (value) = "findingUser($event)"></app-search-form>
 <div *ngIf="user;repository">
-    <h1>{{user.html_url}}</h1>
-    <p>{{  user.public_repos }}</p>
     <img src="{{ user.avatar_url }}" alt="" height="200px">
     <a href="{{ user.html_url }}" class="btn btn-info">View Repository</a>
+    <p>Number of Repositories: {{  user.public_repos }}</p>
     <hr>
     <ol>
         <li *ngFor="let repo of repository">
             <h2>{{repo.html_url}}</h2>
         </li>
     </ol>
+</div>
 </div>
