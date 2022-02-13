@@ -3,10 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { SearchFormComponent } from './search-form/search-form/search-form.component';
+import { RepoComponent } from './repo/repo/repo.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SearchFormComponent,
+    RepoComponent
   ],
   imports: [
     BrowserModule,
