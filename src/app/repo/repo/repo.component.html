@@ -31,7 +31,7 @@
           <div class="avatar">
             <img src="{{ user.avatar_url }}" alt="" height="200px" />
           </div>
-          <div class="card-body">
+          <div class="card-body" >
             <h2>{{ user.login }}</h2>
             <a href="{{ user.html_url }}" class="btn btn-info"
               >View Repository</a
@@ -48,9 +48,9 @@
           <h3>Number of Repositories: {{ user.public_repos }}</h3>
         </div>
       </div>
-      <div class="card-body">
+      <div class="card-body" appCcCardHover>
         <div class="col col-lg-8 mx-auto">
-            <div class="shadow-lg p-3 mb-5 bg-white rounded">
+            <div class="shadow-lg p-3 mb-5 bg-dark rounded">
                 
                     <div *ngFor="let repo of repository" class="list-group-item p-4 m-3 shadow-lg p-3 mb-5 bg-white rounded border-success rounded">
                       <h2>{{repo.name}}</h2>
