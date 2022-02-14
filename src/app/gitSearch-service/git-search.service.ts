@@ -24,11 +24,13 @@ export class GitSearchService {
       html_url: string,
       public_repos: number,
       avatar_url: string, 
-      login: string
+      login: string,
+      apiKey?: Boolean,
+      baseUrl?: Boolean
   }
 
-    let headers = new HttpHeaders({'Authorization': 'token' + environment.apiKey})
-    let request = environment.baseUrl + githubSearch;
+    let headers = new HttpHeaders({'Authorization': 'token' + environment.api_Key})
+    let request = environment.base_Url + githubSearch;
     let params = {headers: headers}
     let promise = new Promise((resolve, reject) => {
       this.http.get<GithubUser>(request, params).toPromise().then((response: any) =>{
@@ -52,8 +54,8 @@ export class GitSearchService {
         html_url: string,
       }
   
-      let headers = new HttpHeaders({'Authorization': 'token' + environment.apiKey})
-      let request = environment.baseUrl + githubSearch  + '/repos';;
+      let headers = new HttpHeaders({'Authorization': 'token' + environment.api_Key})
+      let request = environment.base_Url + githubSearch  + '/repos';
       let params = {headers: headers}
       let promise = new Promise((resolve, reject) => {
         this.http.get<GithubRepo>(request, params).toPromise().then((response: any) =>{
