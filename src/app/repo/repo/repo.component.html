@@ -1,25 +1,14 @@
 <div class="container-fluid">
   <div *ngIf="user; repository">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNavAltMarkup"
-        aria-controls="navbarNavAltMarkup"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <h1>
-            <a class="nav-item nav-link"
-              >Welcome to the Github Search Application<span
-                class="sr-only"
-              ></span
-            ></a>
+            <a class="nav-item nav-link">Welcome to the Github Search Application<span class="sr-only"></span></a>
           </h1>
         </div>
       </div>
@@ -31,11 +20,9 @@
           <div class="avatar">
             <img src="{{ user.avatar_url }}" alt="" height="200px" />
           </div>
-          <div class="card-body" >
+          <div class="card-body">
             <h2>{{ user.login }}</h2>
-            <a href="{{ user.html_url }}" class="btn btn-info"
-              >View Repository</a
-            >
+            <a href="{{ user.html_url }}" class="btn btn-info">View Repository</a>
             <hr />
           </div>
         </div>
@@ -48,23 +35,27 @@
           <h3>Number of Repositories: {{ user.public_repos }}</h3>
         </div>
       </div>
-      <div class="card-body" appCcCardHover>
+      <div class="card-body">
         <div class="col col-lg-8 mx-auto">
-            <div class="shadow-lg p-3 mb-5 bg-dark rounded">
-                
-                    <div *ngFor="let repo of repository" class="list-group-item p-4 m-3 shadow-lg p-3 mb-5 bg-white rounded border-success rounded">
-                      <h2 class="text-primary">{{repo.name}}</h2>
-                      <h4>{{ repo.description }}</h4>
-                      <button class="btn btn-success m-4"><a href="{{ repo.html_url }}" target="_blank">View in GitHub</a></button>
-                    
-                      <div class="card-footer col text-muted">
-                        <div class="float-left">
-                            <p>Created:{{ repo.created_at | time }}</p>
-                        </div>
-                    </div>
-                    </div>
-                    
+          <div class="shadow-lg p-3 mb-5 bg-dark rounded">
+
+            <div *ngFor="let repo of repository"
+              class="list-group-item p-4 m-3 shadow-lg p-3 mb-5 bg-white rounded border-success rounded">
+              <div appCcCardHover>
+                <h2 class="text-primary">{{repo.name}}</h2>
+                <h4>{{ repo.description }}</h4>
+                <button class="btn btn-success m-4"><a href="{{ repo.html_url }}" target="_blank">View in
+                    GitHub</a></button>
+
+                <div class="card-footer col text-muted">
+                  <div class="float-left">
+                    <p>Created:{{ repo.created_at | time }}</p>
+                  </div>
+                </div>
+              </div>
             </div>
+
+          </div>
         </div>
       </div>
     </div>
