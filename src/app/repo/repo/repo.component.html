@@ -37,13 +37,13 @@
       </div>
       <div class="card-body">
         <div class="col col-lg-8 mx-auto">
-          <div class="shadow-lg p-3 mb-5 bg-dark rounded">
+          <div class="shadow-lg p-1 mb-5 bg-dark rounded">
 
             <div *ngFor="let repo of repository"
-              class="list-group-item p-4 m-3 shadow-lg p-3 mb-5 bg-white rounded border-success rounded">
+              class="list-group-item p-1 m-3 shadow-lg p-3 mb-5 bg-white rounded border-success rounded">
               <div appCcCardHover>
-                <h2 class="text-primary">{{repo.name}}</h2>
-                <h4>{{ repo.description }}</h4>
+                <h3 class="text-primary">{{repo.name}}</h3>
+                <h5>{{ repo.description }}</h5>
                 <button class="btn btn-success m-4"><a href="{{ repo.html_url }}" target="_blank">View in
                     GitHub</a></button>
 
