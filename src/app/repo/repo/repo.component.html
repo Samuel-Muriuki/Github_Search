@@ -53,7 +53,7 @@
             <div class="shadow-lg p-3 mb-5 bg-dark rounded">
                 
                     <div *ngFor="let repo of repository" class="list-group-item p-4 m-3 shadow-lg p-3 mb-5 bg-white rounded border-success rounded">
-                      <h2>{{repo.name}}</h2>
+                      <h2 class="text-primary">{{repo.name}}</h2>
                       <h4>{{ repo.description }}</h4>
                       <button class="btn btn-success m-4"><a href="{{ repo.html_url }}" target="_blank">View in GitHub</a></button>
                     

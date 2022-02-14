@@ -25,7 +25,7 @@ export class GitSearchService {
       public_repos: number,
       avatar_url: string, 
       login: string
-    }
+  }
 
     let headers = new HttpHeaders({'Authorization': 'token' + environment.apiKey})
     let request = environment.baseUrl + githubSearch;
